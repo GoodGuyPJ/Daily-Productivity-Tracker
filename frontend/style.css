@@ -1,0 +1,83 @@
+:root{
+  --bg:#0f172a;
+  --card:#0b1220;
+  --muted:#94a3b8;
+  --accent:#60a5fa;
+  --success:#34d399;
+  --danger:#fb7185;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#071033 0%, #0a1226 70%);
+  color:#e6eef8;
+  min-height:100vh;
+}
+.app{max-width:1100px;margin:24px auto;padding:18px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+h1{margin:0;font-size:1.4rem}
+.date-controls{display:flex;gap:8px;align-items:center}
+.date-controls input[type=date], .date-controls button{padding:8px;border-radius:8px;border:1px solid #172554;background:#0b1220;color:var(--muted)}
+main{display:flex;gap:18px}
+.left{flex:1}
+.right{width:360px}
+.add-card{background:linear-gradient(180deg,#07143b,#09152a);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);margin-bottom:14px}
+.add-card h2{margin:0 0 8px 0}
+.add-card input, .add-card select{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #172554;background:transparent;color:inherit}
+.add-card .row{display:flex;gap:10px}
+.add-card button{padding:10px 14px;border-radius:8px;background:var(--accent);border:none;color:#031426;cursor:pointer}
+
+.tasks{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.task-card{background:linear-gradient(180deg,#05132b,#081427);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.task-card.completed{outline:3px solid rgba(52,211,153,0.08)}
+.task-card h3{margin:0 0 6px 0;font-size:1rem}
+.task-meta{font-size:0.9rem;color:var(--muted);margin-bottom:8px}
+.task-actions{display:flex;gap:8px}
+.task-actions button{padding:6px 8px;border-radius:8px;border:none;cursor:pointer}
+.btn-del{background:transparent;color:var(--danger);border:1px solid rgba(251,113,133,0.1)}
+.btn-toggle{background:transparent;color:var(--accent);border:1px solid rgba(96,165,250,0.1)}
+
+.progress{background:linear-gradient(180deg,#07122a,#071729);padding:12px;border-radius:10px;margin-bottom:12px}
+.progress-bar{height:14px;background:#07162b;border-radius:10px;margin-top:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+#progressFill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--success));transition:width .4s}
+.chart-wrap{background:linear-gradient(180deg,#07122a,#081529);padding:12px;border-radius:10px;margin-bottom:12px}
+footer{text-align:center;margin-top:18px;color:var(--muted)}
+@media (max-width:900px){main{flex-direction:column}.right{width:100%}}
+
+
+.music-player {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.music-player audio {
+  width: 90%;
+  border-radius: 5px;
+}
+
+
+.mini-music-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 20px;
+  font-size: 0.9rem;
+}
+
+.mini-music-bar button {
+  border: none;
+  background: #34d399;
+  color: white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mini-music-bar span {
+  color: #fff;
+  min-width: 60px;
+  text-align: left;
+}

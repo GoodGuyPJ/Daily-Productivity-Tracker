@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Daily Productivity Tracker</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>✨ Daily Productivity Tracker</h1>
+      <!-- Mini Music Bar -->
+<div class="mini-music-bar">
+  <button id="prevSong">⏮</button>
+  <button id="playPause">▶</button>
+  <button id="nextSong">⏭</button>
+  <span id="currentSong">Song 1</span>
+  <audio id="music" preload="auto"></audio>
+</div>
+
+      <div class="date-controls">
+        <button id="prevDay">◀</button>
+        <input id="viewDay" type="date" />
+        <button id="nextDay">▶</button>
+        <button id="showAll">Show All</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="left">
+        <div class="add-card">
+          <h2>Add task / card</h2>
+          <input id="title" placeholder="What did you do? (e.g. DSA - arrays)" />
+          <input id="category" placeholder="Category (DSA / Cohort / Exercise)" />
+          <div class="row">
+            <input id="duration" type="number" min="0" placeholder="Duration (minutes)" />
+            <input id="wasted" type="number" min="0" placeholder="Wasted (minutes)" />
+            <input id="learned" type="number" min="0" placeholder="Learned (minutes)" />
+          </div>
+          <input id="taskDay" type="date" />
+          <input id="notes" placeholder="Notes (optional)" />
+          <div class="row">
+            <input id="startTime" type="time" placeholder="Start Time" />
+            <input id="endTime" type="time" placeholder="End Time" />
+          </div>
+          <div class="row">
+            <label>
+              <input type="checkbox" id="isOffice" /> Office Work
+            </label>
+          </div>
+          <div class="row">
+            <select id="status">
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
+            </select>
+            <button id="addBtn">+ Add</button>
+          </div>
+        </div>
+
+        <div id="tasks" class="tasks"></div>
+      </section>
+
+      <aside class="right">
+        <div class="progress">
+          <h3>Completion</h3>
+          <div class="progress-bar"><div id="progressFill"></div></div>
+          <div id="progressText"></div>
+        </div>
+
+        <div class="chart-wrap">
+          <h3>Wasted vs Learned</h3>
+          <canvas id="pieChart"></canvas>
+        </div>
+
+        <div class="chart-wrap">
+          <h3>Time by Category</h3>
+          <canvas id="barChart"></canvas>
+        </div>
+      </aside>
+    </main>
+    <footer>
+      <small>Stored in MongoDB · View any previous day using the date selector  🙂</small>
+      
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

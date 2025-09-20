@@ -1,0 +1,52 @@
+### 1. Create a new task
+POST http://localhost:5000/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Solve DSA question",
+  "description": "Solved 2 questions from CodeWithMik",
+  "status": "completed",
+  "day": "2025-09-20",
+  "timeSpent": 60
+}
+
+### 2. Create another task
+POST http://localhost:5000/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Cohort Study",
+  "description": "Watched TakeUForward recursion video",
+  "status": "in-progress",
+  "day": "2025-09-20",
+  "timeSpent": 45
+}
+
+---
+
+### 3. Get all tasks
+GET http://localhost:5000/api/tasks
+
+### 4. Get tasks for a specific day
+GET http://localhost:5000/api/tasks?day=2025-09-20
+
+### 5. Get tasks in a date range
+GET http://localhost:5000/api/tasks?start=2025-09-15&end=2025-09-20
+
+---
+
+### 6. Update a task by ID
+PUT http://localhost:5000/api/tasks/67000112233445566778899
+Content-Type: application/json
+
+{
+  "title": "Solve DSA question",
+  "description": "Solved 5 questions from Love Babbar sheet",
+  "status": "completed",
+  "timeSpent": 120
+}
+
+---
+
+### 7. Delete a task by ID
+DELETE http://localhost:5000/api/tasks/67000112233445566778899
